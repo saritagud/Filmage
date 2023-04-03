@@ -61,7 +61,7 @@ function paginaDetalles(url,id){
             const peliculas = data.results;
             let peliculasDes = peliculas.slice(0,12)
             const API_Video = 'https://api.themoviedb.org/3/movie/${peliculasDes[id].id}/videos?api_key=3330650ee96720ab5bb53a76eaf7b423&language=en-US'
-            let content = `<div class='modal_content'> <button id="icono"><i class="fa-solid fa-xmark"></i></button><video src="${API_Video + peliculasDes[id].video}" alt=""></video>
+            let content = `<div class='modal_content'> <i id="icono" class="fa-solid fa-xmark"></i><video src="${API_Video + peliculasDes[id].video}" alt=""></video>
             <h1>${peliculasDes[id].title}</h1><p>${peliculasDes[id].overview}</p><p>Popularidad: ${peliculasDes[id].popularity
             }</p><p>Fecha de emision: ${peliculasDes[id].release_date}</p><p>Votos: ${peliculasDes[id].vote_average}</p></div>`
             modal.innerHTML = content;
