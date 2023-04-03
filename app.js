@@ -38,8 +38,7 @@ function sectionPeliculas(url){
                     paginaDetalles(API_URL, peliculasDestacadas.indexOf(p));
                     console.log('ju')
                 });
-                // titulo.onclick = paginaDetalles(API_URL, peliculasDestacadas.indexOf(p))
-                // titulo.href = 'details.html';
+                
                 titulo.textContent = peliTitulo;
                 peliContenedor.appendChild(titulo);
 
