@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Dosis:wght@300 & display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: transparent;
+    margin-bottom: -100px;
+    width: 100%;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+}
+
+.nav img{
+    width: 170px;
+}
+
+#buscador input{
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid #1237A6;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    font-family: 'Dosis', sans-serif;;
+}
+
+#buscador i{
+    margin-left: -25px;
+    color: #2573D9;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+
+.section-principal{
+    margin-top: -200px;
+    background-image: url('./assets/cine-principal-vertical.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 120vh;
+    font-family: 'Fjalla One', sans-serif;;
+    width: 100%;
+    color: #F2EDA7;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.section-principal h1{
+    margin: 20px;
+}
+
+.section-peliculas{
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;;
+    color: #401414;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#lista-peliculas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.peliculas{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: #401414;
+    text-align: center;
+}
+
+.peliculas-img{
+    width: 200px;
+    height: 250px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.tituloPeli{
+    text-decoration: none;
+    color: #401414;
+    cursor: pointer;
+}
+
+
+footer{
+    height: 50px;
+    background-color: #401414;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Dosis', sans-serif;
+    align-items: center;
+    font-size: small;
+}
+
+.detalles{
+    margin: 30px;
+    margin-top: 200px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    color: #401414;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalles img{
+    width: 300px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.detalles h1{
+    font-family: 'Fjalla One', sans-serif;;
+    padding: 10px;
+    font-size: 50px;
+}
+
+.detalles video{
+    height: 400px;
+    width: 100%;
+    background-color: #401414;
+    border-radius: 10px;
+}
+
+.detalles p {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #F2EDA7;
+    border-radius: 10px;
+}
+
+.darkmode{
+    background-color: rgb(21, 21, 21);
+    transition: all 0.2s ease;
+}
+
+.darkmode section h1{
+    color: white;
+}
+
+.darkmode button{
+    background-color: white;
+    color: #1237A6;
+}
+
+.darkmode .button-darkmode:hover{
+    background-color: #1237A6;
+    color: white;
+}
+
+.darkmode #buscador input{
+    border: solid 1px white;
+}
+
+.darkmode #buscador i{
+    color: white;
+}
+
+.darkmode .peliculas{
+    color: white;
+}
+
+.darkmode .tituloPeli{
+    color: white;
+}
+
+
+.button-darkmode{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1237A6;
+    border-radius: 80%;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.button-darkmode:hover{
+    background-color: white;
+    color: #1237A6;
+}
+
+#busqueda-resultados{
+    font-size: 10px;
+    font-family: 'Dosis', sans-serif;
+    margin-top: 100px;
+    z-index: 99;
+    position: absolute;
+    background-color: #401414;
+    width: 100%;
+    height: max-content;
+
+}
+
+.spinner {
+    margin: 100px auto 0;
+    width: 70px;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    z-index: 99;
+  }
+  
+  .spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+  
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+  
+  .spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  
+  .spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  
+  @-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 40% { 
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+}
+
+.ocultar{
+    display: none;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_content{
+    background-color: whitesmoke;
+    width: 80%;
+    height: 80vh;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #401414;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.modal_content h1{
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+.modal_content video{
+    background-color: #401414;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_content p{
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+
+#icono {
+    border: none;
+    color: white;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 50px;
+    top: 55px;
+    right: 35px;
+    position: fixed;
+}
+
+
+.show{
+    display: flex;
+}
+
+.quitar{
+    display: none;
+}
+
+/*responsive*/
+@media (min-width: 500px){
+
+    #lista-peliculas{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+
+
+/*Pantallas medianas (tablets de más de 768px)*/
+@media (min-width: 768px) {
+    .nav img{
+        width: 300px;
+    }
+
+    #buscador input{
+        width: 200px;
+        padding: 15px;
+
+        font-size: 20px;
+    }
+    
+    #buscador i{
+        margin-left: -33px;
+        font-size: 20px;
+    }
+
+    .section-principal{
+        font-size: 30px;
+    }
+
+    .section-peliculas{
+        font-size: 30px;
+    }
+
+    .peliculas{
+        font-size: 40px;
+    }
+
+    .peliculas img{
+        height: 500px;
+        width: 400px;
+    }
+
+    footer{
+        font-size: 20px;
+    }
+
+        
+    .detalles{
+        margin-top: 400px;
+        font-size: 30px;
+        color: #401414;
+    }
+
+    .detalles img{
+        width: 400px;
+        height: 500px;
+    }
+
+    .detalles h1{
+        font-size: 60px;
+    }
+
+    .detalles video{
+        height: 500px;
+        width: 100%;
+    }
+
+    .button-darkmode i{
+        font-size: 60px;
+        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .modal_content{
+        font-size: 25px;
+
+    }
+}
+
+@media (min-width: 820px){
+    .section-principal{
+        background-image: url('./assets/sala-cine-paquete-palomitas_23-2148133601.avif');
+        height: 150vh;
+    }
+
+    .section-principal h1{
+        margin-top: 80px;
+    }
+
+    .peliculas{
+        font-size: 20px;
+    }
+
+    .peliculas img{
+        height: 350px;
+        width: 250px;
+    }
+
+    #lista-peliculas{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .modal_content{
+        font-size: 28px;
+
+    }
+
+    .modal_content img{
+        width: 50%;
+    }
+}
+
+/*Pantallas grandes (desktops de más de 992px)*/
+@media (min-width: 992px) {
+    
+    .section-principal{
+        background-image: url('./assets/sala-cine-paquete-palomitas_23-2148133601.avif');
+        height: 150vh;
+    }
+    
+
+    .nav img {
+        width: 400px;
+    }
+
+    #buscador input{
+        width: 250px;
+
+        font-size: 30px;
+    }
+
+    .section-principal{
+        margin-top: -200px;
+    }
+    
+    #buscador i{
+        margin-left: -45px;
+        font-size: 30px;
+    }
+    .detalles{
+        margin-top: 500px;
+        font-size: 40px;
+    }
+    
+    .button-darkmode{
+        padding: 30px;
+        padding-left: 40px;
+        padding-right: 40px;
+        border-radius: 200px;
+    }
+    .button-darkmode i{
+        font-size: 80px;
+    }
+
+    .peliculas img{
+        height: 350px;
+        width: 250px;
+    }
+    #lista-peliculas{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .modal_content{
+        font-size: 20px;
+
+    }
+
+    .modal_content video{
+        height: 50%;
+    }
+}
+
+/*Pantallas muy grandes (desktops de más de 1200px)*/
+@media (min-width: 1200px) { 
+    .button-darkmode{
+        border-radius: 80%;
+        padding: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border: none;
+        font-size: 25px;
+    }
+
+    .button-darkmode i{
+        font-size: 50px;
+    }
+
+    #buscador input{
+        width: 250px;
+        font-size: 20px;
+    }
+
+    #lista-peliculas{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .peliculas{
+        font-size: 30px;
+    }
+
+    .peliculas img{
+        height: 400px;
+        width: 300px;
+    }
+
+    .modal_content{
+        font-size: 27px;
+    }
+}
+
+@media (min-width: 1300px){
+
+    .section-principal{
+        font-size: 40px;
+    }
+
+    .peliculas{
+        font-size: 20px;
+    }
+
+    .peliculas img{
+        height: 450px;
+        width: 350px;
+    }
+
+    #lista-peliculas{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .modal_content{
+        font-size: 23px;
+    }
+
+    
+.darkmode{
+    background-color: rgb(21, 21, 21);
+    transition: all 0.2s ease;
+}
+
+.darkmode section h1{
+    color: white;
+}
+
+.darkmode button{
+    background-color: white;
+    color: #1237A6;
+}
+
+.darkmode .button-darkmode:hover{
+    background-color: #1237A6;
+    color: white;
+}
+
+.darkmode #buscador input{
+    border: solid 1px white;
+}
+
+.darkmode #buscador i{
+    color: white;
+}
+
+.darkmode .peliculas{
+    color: white;
+}
+
+.darkmode .tituloPeli{
+    color: white;
+}
+}
+
+
